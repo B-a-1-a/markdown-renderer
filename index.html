@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#faf9f3" />
+    <title>folio — a little room to read</title>
+    <link rel="icon" href="icons/folio.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="vendor/marked.js" defer></script>
+    <script src="vendor/purify.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#document">Skip to document</a>
+    <main class="main" id="main">
+      <div class="reading-toolbar">
+        <div class="view-switch" aria-label="Document view">
+          <button id="read-view" class="selected" aria-pressed="true">
+            Read</button
+          ><button id="edit-view" aria-pressed="false">Edit</button>
+        </div>
+        <div class="reading-settings">
+          <button
+            id="bionic-toggle"
+            class="bionic-button"
+            aria-pressed="false"
+            title="Emphasize the beginning of each word"
+          >
+            <span class="bionic-symbol"><b>B</b>r</span
+            ><span>Bionic reading</span
+            ><span class="switch" aria-hidden="true"></span></button
+          ><span class="toolbar-divider"></span
+          ><button
+            id="font-size"
+            class="font-button"
+            aria-label="Text size: medium. Click to change."
+            title="Change text size"
+          >
+            <span>A</span>A
+          </button>
+        </div>
+      </div>
+      <div class="reading-layout">
+        <div class="paper">
+          <div class="document-meta">
+            <span id="document-category">A NOTE ON SIMPLICITY</span
+            ><span
+              ><span id="read-time">3 min read</span
+              ><span class="meta-dot">·</span><span id="word-count"></span
+            ></span>
+          </div>
+          <article class="markdown" id="document" tabindex="-1"></article>
+          <div class="editor-panel" id="editor-panel" hidden>
+            <textarea
+              id="editor"
+              spellcheck="false"
+              aria-label="Markdown source"
+            ></textarea>
+          </div>
+        </div>
+        <aside class="outline" aria-label="Table of contents" hidden>
+          <button
+            id="outline-toggle"
+            class="outline-toggle"
+            aria-label="Show sections"
+            aria-expanded="false"
+            aria-controls="outline-links"
+          >
+            <span id="outline-markers" aria-hidden="true"></span>
+          </button>
+          <nav
+            id="outline-links"
+            class="outline-panel"
+            aria-label="Document sections"
+            hidden
+          ></nav>
+        </aside>
+      </div>
+    </main>
+    <input
+      id="file-input"
+      type="file"
+      accept=".md,.markdown,.mdown,.mkd,.txt,text/markdown,text/plain"
+      hidden
+    />
+    <div id="drop-overlay" hidden>
+      <div>
+        <span>↓</span>
+        <h2>Make room for your words.</h2>
+        <p>Drop your Markdown files here</p>
+      </div>
+    </div>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "folio-markdown",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A quiet, local-first Markdown reader for Chrome.",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node --check app.js && node --check background.js && node scripts/check.mjs"
+  },
+  "dependencies": {
+    "dompurify": "3.4.17",
+    "marked": "16.4.2"
+  },
+  "license": "MIT"
+}
