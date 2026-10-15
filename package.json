@@ -1,6 +1,6 @@
 {
-  "name": "folio-markdown",
-  "version": "1.0.0",
+  "name": "markdown-reader",
+  "version": "1.0.1",
   "private": true,
   "description": "A quiet, local-first Markdown reader for Chrome.",
   "scripts": {
